@@ -17,6 +17,9 @@ class _RegisterState extends State<Register> {
             child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        const SizedBox(
+          height: 200.0,
+        ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: TextField(
@@ -26,21 +29,41 @@ class _RegisterState extends State<Register> {
                 prefixIcon: Icon(Icons.mail, color: Colors.black)),
           ),
         ),
-        Container(
+        Padding(
+            padding: const EdgeInsets.all(16.0),
             child: TextField(
-          obscureText: true,
-          decoration: const InputDecoration(
-              hintText: "Password",
-              prefixIcon: Icon(Icons.lock, color: Colors.black)),
-        )),
-        Container(
+              obscureText: true,
+              decoration: const InputDecoration(
+                  hintText: "Password",
+                  prefixIcon: Icon(Icons.lock, color: Colors.black)),
+            )),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
           child: TextField(
             obscureText: true,
             decoration: const InputDecoration(
                 hintText: "Confirm Password",
                 prefixIcon: Icon(Icons.lock, color: Colors.black)),
           ),
-        )
+        ),
+        Container(
+          width: double.infinity,
+          child: RawMaterialButton(
+            fillColor: Color.fromARGB(255, 0, 0, 247),
+            elevation: 0.0,
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12.0)),
+            onPressed: () => {},
+            child: const Text(
+              "Sign-up",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18.0,
+              ),
+            ),
+          ),
+        ),
       ],
     )));
   }
