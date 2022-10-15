@@ -65,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
       required BuildContext context}) async {
     FirebaseAuth auth = FirebaseAuth.instance;
     User? user;
+    //hello
     try {
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
           email: email, password: password);
@@ -161,7 +162,6 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           Container(
-            
               alignment: Alignment.center,
               child: Text("Don't Have An Account? Create One",
                   style: TextStyle(color: Colors.blue)),
