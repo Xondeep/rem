@@ -12,10 +12,36 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text("Accessibility Settings"),
-      ),
-    );
+    return Scaffold(
+        body: Center(
+            child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            decoration: const InputDecoration(
+                hintText: "User Email",
+                prefixIcon: Icon(Icons.mail, color: Colors.black)),
+          ),
+        ),
+        Container(
+            child: TextField(
+          obscureText: true,
+          decoration: const InputDecoration(
+              hintText: "Password",
+              prefixIcon: Icon(Icons.lock, color: Colors.black)),
+        )),
+        Container(
+          child: TextField(
+            obscureText: true,
+            decoration: const InputDecoration(
+                hintText: "Confirm Password",
+                prefixIcon: Icon(Icons.lock, color: Colors.black)),
+          ),
+        )
+      ],
+    )));
   }
 }
