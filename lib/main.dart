@@ -163,9 +163,14 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Container(
               alignment: Alignment.center,
-              child: Text("Don't Have An Account? Create One",
-                  style: TextStyle(color: Colors.blue)),
-              margin: const EdgeInsets.symmetric(vertical: 10.0)),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => Register()));
+                },
+                child: Text("Don't Have An Account? Create One",
+                    style: TextStyle(color: Colors.blue)),
+              )),
         ],
       ),
     );
